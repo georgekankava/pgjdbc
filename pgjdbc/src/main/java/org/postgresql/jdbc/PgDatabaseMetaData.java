@@ -73,6 +73,7 @@ public class PgDatabaseMetaData implements DatabaseMetaData {
       ResultSet rs = stmt.executeQuery(sql);
       if (!rs.next()) {
         stmt.close();
+        rs.close();
         throw new PSQLException(
             GT.tr(
                 "Unable to determine a value for MaxIndexKeys due to missing system catalog data."),

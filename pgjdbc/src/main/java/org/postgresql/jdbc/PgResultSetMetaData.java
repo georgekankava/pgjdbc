@@ -284,6 +284,7 @@ public class PgResultSetMetaData implements ResultSetMetaData, PGResultSetMetaDa
       }
     }
     stmt.close();
+    rs.close();
     // put in cache
     _cache.setCache(idFields, fields);
   }
